@@ -15,17 +15,24 @@ class Round {
     }
   }
 
-  takeTurn(){
+  takeTurn(turn){
     this.turns += 1;
-// updates turns count, evaluates guesses, gives feedback, stores ids of incorrect guesses
+    turn.evaluateGuess();
+    // if(turn.evaluateGuess() === false){
+    //   this.incorrectGuesses.push()
+    // }
+// gives feedback, stores ids of incorrect guesses
   }
 
   calculatePercentCorrect(){
-// calculates and returns percentage of correct guesses
+    var rightAnswers = this.turns - this.incorrectGuesses.length;
+    var percentCorrect = (rightAnswers / this.turns) * 100;
+    this.endRound(percentCorrect);
+    return percentCorrect;
   }
 
-  endRound(){
-// prints to console ** Round over! ** You answered <>% of the questions correctly!’
+  endRound(percentCorrect){
+    return `** ROUND OVER! ** You answered ${percentCorrect}% of the questions correctly!`
   }
 }
 

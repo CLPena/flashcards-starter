@@ -22,6 +22,7 @@ class Turn {
     } else {
       return false;
     }
+    this.giveFeedback();
   }
 
   giveFeedback(){
