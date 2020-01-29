@@ -9,23 +9,23 @@ class Turn {
   }
 
   returnGuess(){
-    return guess;
+    return this.guess;
   }
 
   returnCard(){
-    return currentCard;
+    return this.currentCard;
   }
 
   evaluateGuess(){
-    if(guess === currentCard.correctAnswer){
+    if(this.guess === this.currentCard.correctAnswer){
       return true;
     } else {
       return false;
     }
   }
-  
+
   giveFeedback(){
-    if(evaluateGuess()){
+    if(this.evaluateGuess()){
       return 'CORRECT!'
     } else {
       return 'INCORRECT!'
