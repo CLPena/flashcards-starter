@@ -19,21 +19,22 @@ class Round {
     var turn = new Turn(guess, this.deck.cards[this.turns]);
     var cardId = turn.currentCard.id;
     turn.evaluateGuess();
-    // if(turn.evaluateGuess() === false){
-    //   this.incorrectGuesses.push(cardId);
+    if(turn.evaluateGuess() === false){
+      this.incorrectGuesses.push(cardId);
+    }
+    var result = turn.giveFeedback();
     this.turns += 1;
-    // }
+    return result;
   }
 
   calculatePercentCorrect(){
     var rightAnswers = this.turns - this.incorrectGuesses.length;
-    var percentCorrect = (rightAnswers / this.turns) * 100;
-    this.endRound(percentCorrect);
+    var percentCorrect = Math.round((rightAnswers / this.turns) * 100);
     return percentCorrect;
   }
 
-  endRound(percentCorrect){
-    return `** ROUND OVER! ** You answered ${percentCorrect}% of the questions correctly!`
+  endRound(){
+    return `** ROUND OVER! ** You answered ${this.calculatePercentCorrect()}% of the questions correctly!`
   }
 }
 
