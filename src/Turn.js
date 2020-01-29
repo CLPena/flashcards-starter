@@ -7,6 +7,30 @@ class Turn {
     this.guess = guess;
     this.currentCard = currentCard;
   }
+
+  returnGuess(){
+    return guess;
+  }
+
+  returnCard(){
+    return currentCard;
+  }
+
+  evaluateGuess(){
+    if(guess === currentCard.correctAnswer){
+      return true;
+    } else {
+      return false;
+    }
+  }
+  
+  giveFeedback(){
+    if(evaluateGuess()){
+      return 'CORRECT!'
+    } else {
+      return 'INCORRECT!'
+    }
+  }
 }
 
 module.exports = Turn;
