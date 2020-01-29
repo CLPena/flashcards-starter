@@ -10,18 +10,18 @@ class Round {
   }
 
   returnCurrentCard(deck){
-    if(this.turns === 0){
-      return this.deck.cards[0];
-    }
+    return this.deck.cards[this.turns];
   }
 
   takeTurn(turn){
+    // create new t urn here, take out of test
+    var cardId = turn.currentCard.id;
     this.turns += 1;
     turn.evaluateGuess();
-    // if(turn.evaluateGuess() === false){
-    //   this.incorrectGuesses.push()
-    // }
-// gives feedback, stores ids of incorrect guesses
+    if(turn.evaluateGuess() === false){
+      this.incorrectGuesses.push(cardId);
+    }
+    // The next card becomes current card
   }
 
   calculatePercentCorrect(){
