@@ -14,16 +14,16 @@ class Game {
   }
 
   printMessage(deck, round) {
-      console.log(`Welcome to FlashCards! You are playing with ${deck.countCards()} cards.
+    console.log(`Welcome to FlashCards! You are playing with ${deck.countCards()} cards.
 -----------------------------------------------------------------------`)
   }
 
   printQuestion(round) {
-      util.main(round);
+    util.main(round);
   }
 
-  start(){
-    for(var i = 0; i < prototypeQuestions.length; i++){
+  start() {
+    for (var i = 0; i < prototypeQuestions.length; i++) {
       var card = new Card(prototypeQuestions[i].id, prototypeQuestions[i].question, prototypeQuestions[i].answers, prototypeQuestions[i].correctAnswer);
       this.cards.push(card);
     }

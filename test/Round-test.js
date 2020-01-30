@@ -3,14 +3,12 @@ const expect = chai.expect;
 
 const Round = require('../src/Round');
 const Card = require('../src/Card');
-const Turn = require('../src/Turn');
 const Deck = require('../src/Deck');
 
 
 describe('Round', function() {
 
   it('should be a function', function() {
-    const round = new Round();
     expect(Round).to.be.a('function');
   });
 
@@ -19,7 +17,7 @@ describe('Round', function() {
     expect(round).to.be.an.instanceof(Round);
   });
 
-  it('should keep track of number of turns', function(){
+  it('should keep track of number of turns', function() {
     const card = new Card(1, 'What is Robbie\'s favorite animal', ['sea otter', 'pug', 'capybara'], 'sea otter');
     const deck = new Deck([card]);
     const round = new Round(deck);

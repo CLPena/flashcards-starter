@@ -1,31 +1,27 @@
-// const data = require('./data');
-// const prototypeQuestions = data.prototypeData;
-// const util = require('./util');
-
 class Turn {
   constructor(guess, currentCard) {
     this.guess = guess;
     this.currentCard = currentCard;
   }
 
-  returnGuess(){
+  returnGuess() {
     return this.guess;
   }
 
-  returnCard(){
+  returnCard() {
     return this.currentCard;
   }
 
-  evaluateGuess(){
-    if(this.guess === this.currentCard.correctAnswer){
+  evaluateGuess() {
+    if (this.guess === this.currentCard.correctAnswer) {
       return true;
     } else {
       return false;
     }
   }
 
-  giveFeedback(){
-    if(this.guess === this.currentCard.correctAnswer){
+  giveFeedback() {
+    if (this.guess === this.currentCard.correctAnswer) {
       return 'CORRECT!'
     } else {
       return 'INCORRECT!'
