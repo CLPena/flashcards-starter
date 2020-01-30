@@ -20,3 +20,6 @@ describe('Game', function() {
     expect(game.round).to.be.an('object');
   });
 });
+
+// test that deck and round are created
+// test for length of cards array
